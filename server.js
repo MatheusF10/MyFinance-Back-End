@@ -10,7 +10,7 @@ const app = express()
 
 const port = process.env.PORT || 5000
 
-mongoose.connect('mongodb://localhost:27017/financeiro', {
+mongoose.connect('mongodb://localhost:27017/app_financeiro', {
     useUnifiedTopology: true,
     useNewUrlParser: true,
     useFindAndModify: false,
@@ -28,7 +28,7 @@ app.use(cors())
 app.use(cookieParser())
 app.use(express.json())
 
-app.user(routes)
+app.use(routes)
 
 app.listen(port, () => {
     console.log(`Server Running on Port ${port}`)
